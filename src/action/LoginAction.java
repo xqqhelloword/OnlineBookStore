@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class LoginAction extends ActionSupport implements ModelDriven<UserBean> {
 	private UserBean user=new UserBean();
-	private Map<String, Object> dataMap;//放置一条json格式数据返回前端（告诉前端登录结果）
+	private Map<String, Object> dataMap;//缂栫爜缁熶竴浣跨敤utf-8 
 	public LoginAction(){
 		//dataMap.clear();
 	}
@@ -44,7 +44,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<UserBean> 
 		System.out.print("successLogin\n");
 		dataMap.put("result", "login success");
 		System.out.println(dataMap.get("result"));
-		//登录请求处理，调用下一层service中的login业务
+		//锟斤拷录锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷一锟斤拷service锟叫碉拷login业锟斤拷
 		return SUCCESS;
 	}
 

@@ -21,12 +21,12 @@ public class LoginService {
 		// TODO Auto-generated method stub
 		String userAccount=user.getUserAccount();
 		String userPassword=user.getUserPassword();
-		System.out.println("ÕËºÅ:"+userAccount+"\nÃÜÂë:"+userPassword);
+		System.out.println("ï¿½Ëºï¿½:"+userAccount+"\nï¿½ï¿½ï¿½ï¿½:"+userPassword);
 		//DbMethod db=new DbMethod();
 		//ArrayList<Map<String,Object>> arr=db.search("select userId from user where userAccount='"+userAccount+"' and userPassword='"+userPassword+"'",1,"userId");
 		//if(arr.size()>0)
 		//	return true;
-		/***ÉÏÃæ¼¸ĞĞ×¢ÊÍÎª²éÑ¯Êı¾İ¿â´úÂë£¬ÉĞÎ´²âÊÔ£¬¹Ê×¢ÊÍµô*********/
+		/***æœªè¿æ¥æ•°æ®åº“ï¼Œæ³¨é‡Šæ‰*********/
 		return true;
 	}
 
