@@ -8,34 +8,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>登录</title>
+    <title>书城登录</title>
 	<script src="jquery/jquery-2.0.3.js"></script>
-	<script src="jquery/jquery-2.0.3.min.js"></script>
+	<!--  <script src="jquery/jquery-2.0.3.min.js"></script>-->
 	<script>
 	$(document).ready(function(){
-	$("#loginBtn").click(function(){
-	$.ajax({
-				type:"POST",
-				url:"login?t="+new Date().getTime(),
-				data:$("#loginform").serialize(),
-				cache:false, 
-				dataType:"json",
-				success:function(data){
-				alert(data.result);
-				},
-				error:function(xhr){
-					alert("error:"+xhr.resoponseText);
-				}
+	$("#btn").click(function(){
+		$.ajax({
+			type:"POST",
+			url:"login?t="+new Date().getTime(),
+			data:$("#loginform").serialize(),
+			dataType:"json",
+			cache:false,
+			success:function(data){
+				alert(data["result"]);
+			},
+			error:function(xhr){
+				alert("error: "+xhr.responseText);
+			}
 		})
 	})
-	})
+})
 	</script>
   </head>
-  <body>
-    <Form id="loginform" >
-   账号: <input type="text" name="userAccount" ><br>
-   密码: <input type="password" name="userPassword"><br>
-   <input type="button" value="提交" id="loginBtn">
-    </Form>
-  </body>
+<body >
+<div style="background-image:url('./img/managerLogin.jpg');width:100%;height:600px;background-position:center;background-size:cover;background-repeat:no-repeat;position:relative;">
+	<div style="width:60%;margin-left:20%;margin-right:20%;height:320px;position:absolute;background-color:rgba(255,255,255,0.4);top:80px;">
+		<div id="title_box" style="text-align:center;">
+			<h1>书城登录</h1>
+		</div>
+		<div id="login_box" align="center">
+			<form id="loginform" style="margin-left:26%;width:74%;">
+				<div style="width:100%;height:50px;">
+				<div style="width:15%;float:left;">用户名:</div>
+				<div style="float:left;"><input type="text" name="userAccount" id="username" style="width:230px;height:25px;border-radius:3px;border-style:none;"/></div>
+				</div>
+				<div style="width:100%;height:50px;">
+				<div style="width:15%;float:left;">密码:</div>
+				<div style="float:left;"><input type="password" name="userPassword" id="password" style="width:230px;height:25px;border-radius:3px;border-style:none;"/></div>
+				</div>
+				<div><input type="button" value="登录" id="btn" style="width:230px;height:25px;border-radius:3px;border-style:none;float:left;margin-left:15%;"/></div>
+			</form>
+		</div>
+   </div>
+</div>
+</body>
 </html>
