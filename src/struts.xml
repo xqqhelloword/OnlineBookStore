@@ -18,7 +18,7 @@
         </action>
          <action name="bookList" method="bookListRs" class="action.bookListAction">
             <result type="json">
-                <param name="root">dataMap</param>
+                <param name="root">map</param>
             </result>
         </action>
     </package>
