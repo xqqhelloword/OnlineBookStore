@@ -1,6 +1,7 @@
 package bean;
 
 public class Pbook {
+	private String idPbook;
 	private String pbookName;
 	private String pbookWriter;
 	private String pbookPublisher;
@@ -11,6 +12,12 @@ public class Pbook {
 	private String pbookAbstract;
 	private String pbookPictureUrl;
 	private String pbookClickTimes;
+	public String getIdPbook() {
+		return idPbook;
+	}
+	public void setIdPbook(String idPbook) {
+		this.idPbook = idPbook;
+	}
 	public String getPbookName() {
 		return pbookName;
 	}
