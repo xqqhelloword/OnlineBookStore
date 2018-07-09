@@ -28,8 +28,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			dataType:"json",
 			cache:false,
 			success:function(data){
-				alert(data["EBook"].length+"|"+data["PBook"].length+"|"+data["OBook"].length);
-				alert(data);
+				var info1="电子书:";
+				var info2="实体书:";
+				var info3="二手实体书:";
+				var info4="热销书籍:"
+				$.each(data["EBookList"],function(i,values){
+				 info1+=values.ebookName+"||";
+				});
+				alert(info1);
+				$.each(data["PBookList"],function(i,values){
+				 info2+=values.PbookName+"||";
+				});
+				alert(info2);
+				$.each(data["OBookList"],function(i,values){
+				 info3+=values.obookName+"||";
+				});
+				alert(info3);
+				$.each(data["SoldTopList"],function(i,values){
+				 info4+=values.PbookName+"||";
+				});
+				alert(info4);
 			},
 			error:function(xhr){
 				alert("error: "+xhr.responseText);
