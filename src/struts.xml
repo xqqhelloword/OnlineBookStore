@@ -11,7 +11,7 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
-        <action name="register" method="updateExcute" class="action.registerAction">
+        <action name="register" method="registerExcute" class="action.registerAction">
             <result type="json">
                 <param name="root">dataMap</param>
             </result>
