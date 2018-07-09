@@ -23,7 +23,7 @@ public class registerService {
 		String userName=user.getUserName();
 		String userPhone=user.getUserPhone();
 		String userAddress=user.getUserAddress();
-		System.out.println("用户账号:"+userAccount+"\n密码:"+userPassword+"\n用户名"+userName+"\n电话号码"+userPhone+"\n用户地址:"+userAddress);
+		System.out.println("用户账号:"+userAccount+"\n密码:"+userPassword+"\n用户名:"+userName+"\n电话号码:"+userPhone+"\n用户地址:"+userAddress);
 		DbMethod db=new DbMethod();
 		Object[] args={userAccount,userPassword,userName,userPhone,userAddress};
 		String sql="insert into user(userAccount,userPassword,userName,userPhone,userAddress) values(?,?,?,?,?)";
