@@ -2,6 +2,7 @@ package dao;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,12 +14,12 @@ import db.connDB;
 import bean.UserBean;
 
 public class DbMethod {
-	public ArrayList<Map<String,Object>> search(String sql,int attrNum,String... names ) {//String... argsÎª²»¶¨³¤²ÎÊý,attrNumÎª²éÑ¯Óï¾äÖÐ²éÑ¯½á¹ûÖÐÊôÐÔµÄ¸öÊý
+	public ArrayList<Map<String,Object>> search(String sql,int attrNum,String... names ) {//String... argsÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,attrNumÎªï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÔµÄ¸ï¿½ï¿½ï¿½
 		// TODO Auto-generated method stub
 		ArrayList<Map<String,Object>> objArrayL=new ArrayList<Map<String,Object>>();
 		Connection conn=connDB.getConnection();
 		Statement ps=null;
-		System.out.println("²éÑ¯Óï¾ä:"+sql);
+		System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½:"+sql);
 		try{
 			ps = conn.createStatement();
 		ResultSet rs=ps.executeQuery(sql);
@@ -32,7 +33,7 @@ public class DbMethod {
 		}
 		}catch(SQLException e){
 			e.printStackTrace();
-			System.out.println("\ngetAllCourseInfo Fail--[sqlException]:"+" "+e.getMessage()+"\n");
+			System.out.println("\n Fail--[sqlException]:"+" "+e.getMessage()+"\n");
 		}
 		for(int i=0;i<objArrayL.size();i++){
 			for(int j=0;j<objArrayL.get(i).size();j++){
@@ -42,4 +43,27 @@ public class DbMethod {
 		}
 			return objArrayL;
 		}
+	
+	public static void update(String sql, Object... args) {// Ê¹ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ò²ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Ç²ï¿½È·ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ô´ï¿½ï¿½Ý¶ï¿½ï¿½
+		Connection conn = null;
+		PreparedStatement ps = null;
+
+		try {
+			conn = connDB.getConnection();
+			ps = conn.prepareStatement(sql);
+
+			// ï¿½ï¿½sql ï¿½Ðµï¿½ï¿½Î²Î½ï¿½ï¿½Ð¸ï¿½Öµ
+			for (int i = 0; i < args.length; i++) {
+				ps.setObject(i + 1, args[i]);
+			}
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
+		}finally {
+			connDB.freeAll(conn, ps, null);
+		}
+
+	}
 }

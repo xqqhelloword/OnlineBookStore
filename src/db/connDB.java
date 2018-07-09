@@ -11,9 +11,9 @@ public class connDB {
 	
 	private static String username = "root";
 	
-	private static String password = "2269";
+	private static String password = "123456789";
 	
-	private static String url = "jdbc:mysql://localhost/pachong";
+	private static String url = "jdbc:mysql://localhost/bookstore";
 	
 	private static String driver = "com.mysql.jdbc.Driver";
 	
@@ -62,28 +62,7 @@ public class connDB {
 
 	}
 
-	public static void update(String sql, Object... args) {// 使用不定长参数 也就是参数的个数是不确定的可以传递多个
-		Connection conn = null;
-		PreparedStatement ps = null;
-
-		try {
-			conn = getConnection();
-			ps = conn.prepareStatement(sql);
-
-			// 对sql 中的形参进行赋值
-			for (int i = 0; i < args.length; i++) {
-				ps.setObject(i + 1, args[i]);
-			}
-
-			ps.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
-		}finally {
-			connDB.freeAll(conn, ps, null);
-		}
-
-	}
+	
 	public static void main(String[] args) {
 		System.out.println(getConnection());
 	}
