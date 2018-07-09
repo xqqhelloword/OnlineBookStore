@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<form id="registerform" style="margin-left:26%;width:74%;height:auto">
 				<div style="width:100%;height:50px;">
 					<div style="width:15%;float:left;">用户名:</div>
-					<div style="float:left;"><input type="text" name="userAccount" id="username" style="width:230px;height:25px;border-radius:3px;border-style:none;"/></div>
+					<div style="float:left;"><input type="text" name="userName" id="username" style="width:230px;height:25px;border-radius:3px;border-style:none;"/></div>
 				</div>
 				<div style="width:100%;height:50px;">
 					<div style="width:15%;float:left;">密码:</div>

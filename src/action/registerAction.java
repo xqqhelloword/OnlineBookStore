@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import service.registerService;
-
+import service.updatetest;
 import bean.NewUserBean;
 import bean.UserBean;
 
@@ -32,8 +32,20 @@ public class registerAction extends ActionSupport implements ModelDriven<NewUser
 		// TODO Auto-generated method stub
 		return newUserBean;
 	}
-	public String RegisterExcute(){
+	/*public String RegisterExcute(){
 		if(!new registerService().register(newUserBean)){
+			dataMap=new HashMap<String,Object>();
+			dataMap.put("RegisterResult", "注册失败");
+			System.out.println("return register result:"+dataMap.get("RegisterResult"));
+			return SUCCESS;
+		}
+		dataMap=new HashMap<String,Object>();
+		dataMap.put("RegisterResult", "注册成功");
+		System.out.println("return register result:"+dataMap.get("RegisterResult"));
+		return SUCCESS;
+	}*/
+	public String updateExcute(){
+		if(!new updatetest().updatetest(newUserBean)){
 			dataMap=new HashMap<String,Object>();
 			dataMap.put("RegisterResult", "注册失败");
 			System.out.println("return register result:"+dataMap.get("RegisterResult"));

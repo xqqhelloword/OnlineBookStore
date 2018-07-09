@@ -11,9 +11,8 @@ public class connDB {
 	
 	private static String username = "root";
 	
-	private static String password = "123456789";
+	private static String password = "2269";
 	
-
 	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
 
 	private static String driver = "com.mysql.jdbc.Driver";
@@ -63,7 +62,25 @@ public class connDB {
 
 	}
 
+	public static void frees( Statement st, ResultSet rs) {
+		if (st != null) {
+			try {
+				st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
+			}
+		}
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
+			}
+		}
 
+	}
 
 	public static void update(String sql, Object... args) {
 

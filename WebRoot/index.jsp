@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     <title>书城登录</title>
-	<script src="jquery/jquery-2.0.3.js"></script>
+	<script src="jquery/jquery-2.0.3.js"></script><!-- 这个是jquery库，需自己下载 -->
 	<!--  <script src="jquery/jquery-2.0.3.min.js"></script>-->
 	<script>
 	$(document).ready(function(){
