@@ -96,6 +96,7 @@ public class Dao2 {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        
         return result;
     }
 
@@ -156,6 +157,7 @@ public class Dao2 {
         try {
             PreparedStatement psmt = con.prepareStatement(sql);
             int result = psmt.executeUpdate();
+            con.close();
             return result;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -172,6 +174,7 @@ public class Dao2 {
      */
     public Object getObject(String className,String param,Object value) throws SQLException {
         // 得到表名字
+    	System.out.println(4444);
         String tableName = className.substring(className.lastIndexOf(".") + 1,
                 className.length());
         // 根据类名来创建Class对象

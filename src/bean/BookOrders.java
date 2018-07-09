@@ -1,6 +1,6 @@
 package bean;
 
-public class BookOrders {
+public class bookorders {
 	private String idbookorders;
 	private String idUser;
 	private String bookId;
