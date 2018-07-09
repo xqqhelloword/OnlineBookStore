@@ -2,6 +2,7 @@ package dao;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,7 +19,11 @@ public class DbMethod {
 		ArrayList<Map<String,Object>> objArrayL=new ArrayList<Map<String,Object>>();
 		Connection conn=connDB.getConnection();
 		Statement ps=null;
+<<<<<<< HEAD
 		System.out.println("查询语句:"+sql);
+=======
+		System.out.println("��ѯ���:"+sql);
+>>>>>>> 5f5e54b01f84ee7ccd17d9f022a9a39897143db0
 		try{
 			ps = conn.createStatement();
 		ResultSet rs=ps.executeQuery(sql);
@@ -32,7 +37,11 @@ public class DbMethod {
 		}
 		}catch(SQLException e){
 			e.printStackTrace();
+<<<<<<< HEAD
 			System.out.println("\nsearch Fail--[sqlException]:"+" "+e.getMessage()+"\n");
+=======
+			System.out.println("\n Fail--[sqlException]:"+" "+e.getMessage()+"\n");
+>>>>>>> 5f5e54b01f84ee7ccd17d9f022a9a39897143db0
 		}
 		for(int i=0;i<objArrayL.size();i++){
 			for(int j=0;j<objArrayL.get(i).size();j++){
@@ -42,4 +51,27 @@ public class DbMethod {
 		}
 			return objArrayL;
 		}
+	
+	public static void update(String sql, Object... args) {// ʹ�ò��������� Ҳ���ǲ����ĸ����ǲ�ȷ���Ŀ��Դ��ݶ��
+		Connection conn = null;
+		PreparedStatement ps = null;
+
+		try {
+			conn = connDB.getConnection();
+			ps = conn.prepareStatement(sql);
+
+			// ��sql �е��βν��и�ֵ
+			for (int i = 0; i < args.length; i++) {
+				ps.setObject(i + 1, args[i]);
+			}
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
+		}finally {
+			connDB.freeAll(conn, ps, null);
+		}
+
+	}
 }

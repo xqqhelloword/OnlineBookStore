@@ -11,9 +11,13 @@ public class connDB {
 	
 	private static String username = "root";
 	
-	private static String password = "2269";
+	private static String password = "123456789";
 	
+<<<<<<< HEAD
 	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
+=======
+	private static String url = "jdbc:mysql://localhost/bookstore";
+>>>>>>> 5f5e54b01f84ee7ccd17d9f022a9a39897143db0
 	
 	private static String driver = "com.mysql.jdbc.Driver";
 	
@@ -62,6 +66,7 @@ public class connDB {
 
 	}
 
+<<<<<<< HEAD
 	public static void update(String sql, Object... args) {// ʹ�ò��������� Ҳ���ǲ���ĸ����ǲ�ȷ���Ŀ��Դ��ݶ��
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -84,6 +89,9 @@ public class connDB {
 		}
 
 	}
+=======
+	
+>>>>>>> 5f5e54b01f84ee7ccd17d9f022a9a39897143db0
 	public static void main(String[] args) {
 		System.out.println(getConnection());
 	}
