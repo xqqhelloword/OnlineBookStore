@@ -13,7 +13,14 @@ public class connDB {
 	
 	private static String password = "123456789";
 	
+<<<<<<< HEAD
 	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
+=======
+
+	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
+
+
+>>>>>>> 23dc911d21ff150f9ac49204c6271c73b054284f
 	
 	private static String driver = "com.mysql.jdbc.Driver";
 	
@@ -62,16 +69,19 @@ public class connDB {
 
 	}
 
+<<<<<<< HEAD
 	public static void update(String sql, Object... args) {// ʹ�ò��������� Ҳ���ǲ���ĸ����ǲ�ȷ���Ŀ��Դ��ݶ��
+=======
+
+	public static void update(String sql, Object... args) {
+>>>>>>> 23dc911d21ff150f9ac49204c6271c73b054284f
 		Connection conn = null;
 		PreparedStatement ps = null;
 
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(sql);
-
-			// ��sql �е��βν��и�ֵ
-			for (int i = 0; i < args.length; i++) {
+for (int i = 0; i < args.length; i++) {
 				ps.setObject(i + 1, args[i]);
 			}
 
@@ -84,6 +94,12 @@ public class connDB {
 		}
 
 	}
+<<<<<<< HEAD
+=======
+
+	
+
+>>>>>>> 23dc911d21ff150f9ac49204c6271c73b054284f
 	public static void main(String[] args) {
 		System.out.println(getConnection());
 	}
