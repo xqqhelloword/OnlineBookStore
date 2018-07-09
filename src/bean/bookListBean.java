@@ -1,13 +1,13 @@
 package bean;
 
 public class bookListBean {
-	private String t;
+	private String time;
 
-	public String getT() {
-		return t;
+	public String getTime() {
+		return time;
 	}
 
-	public void setT(String t) {
-		this.t = t;
+	public void setTime(String time) {
+		this.time = time;
 	}
 }
