@@ -21,13 +21,13 @@ public class LoginService {
 		// TODO Auto-generated method stub
 		String userAccount=user.getUserAccount();
 		String userPassword=user.getUserPassword();
-		System.out.println("�˺�:"+userAccount+"\n����:"+userPassword);
-		//DbMethod db=new DbMethod();
-		//ArrayList<Map<String,Object>> arr=db.search("select userId from user where userAccount='"+userAccount+"' and userPassword='"+userPassword+"'",1,"userId");
-		//if(arr.size()>0)
-		//	return true;
-		/***未连接数据库，注释掉*********/
-		return true;
+		System.out.println("用户名:"+userAccount+"\n密码:"+userPassword);
+		DbMethod db=new DbMethod();
+		ArrayList<Map<String,Object>> arr=db.search("select idUser from user where userAccount='"+userAccount+"' and userPassword='"+userPassword+"'",1,"idUser");
+		System.out.println("arraySize:"+arr.size());
+		if(arr.size()>0)
+			return true;
+		return false;
 	}
 
 }

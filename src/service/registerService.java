@@ -1,5 +1,9 @@
 package service;
 
+import java.util.ArrayList;
+import java.util.Map;
+
+import dao.DbMethod;
 import bean.UserBean;
 import bean.NewUserBean;
 public class registerService {
@@ -16,12 +20,11 @@ public class registerService {
 		// TODO Auto-generated method stub
 		String userAccount=user.getUserAccount();
 		String userPassword=user.getUserPassword();
-		System.out.println("ÕËºÅ:"+user.getUserAccount()+"\nÃÜÂë:"+user.getUserPassword()+"\nÃû×Ö£º"+user.getUserName()+"\nµç»°£º"+user.getUserPhone()+"\nµØÖ·:"+user.getUserAddress());
-		//DbMethod db=new DbMethod();
-		//ArrayList<Map<String,Object>> arr=db.search("select userId from user where userAccount='"+userAccount+"' and userPassword='"+userPassword+"'",1,"userId");
-		//if(arr.size()>0)
-		//	return true;
-		/***Î´ÓëÊı¾İ¿âÍê³ÉÁ¬½Ó£¬¹Ê×¢ÊÍµô*********/
+		System.out.println("ç”¨æˆ·è´¦å·:"+user.getUserAccount()+"\nå¯†ç :"+user.getUserPassword()+"\nç”¨æˆ·å"+user.getUserName()+"\nç”µè¯å·ç "+user.getUserPhone()+"\nç”¨æˆ·åœ°å€:"+user.getUserAddress());
+		DbMethod db=new DbMethod();
+		ArrayList<Map<String,Object>> arr=db.search("select userId from user where userAccount='"+userAccount+"' and userPassword='"+userPassword+"'",1,"userId");
+		if(arr.size()>0)
+			return true;
 		return true;
 	}
 

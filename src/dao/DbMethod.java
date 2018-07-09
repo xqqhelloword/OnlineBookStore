@@ -13,12 +13,12 @@ import db.connDB;
 import bean.UserBean;
 
 public class DbMethod {
-	public ArrayList<Map<String,Object>> search(String sql,int attrNum,String... names ) {//String... args为不定长参数,attrNum为查询语句中查询结果中属性的个数
+	public ArrayList<Map<String,Object>> search(String sql,int attrNum,String... names ) {//String... args为锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷,attrNum为锟斤拷询锟斤拷锟斤拷胁锟窖拷锟斤拷锟斤拷锟斤拷锟皆的革拷锟斤拷
 		// TODO Auto-generated method stub
 		ArrayList<Map<String,Object>> objArrayL=new ArrayList<Map<String,Object>>();
 		Connection conn=connDB.getConnection();
 		Statement ps=null;
-		System.out.println("查询语句:"+sql);
+		System.out.println("鏌ヨ璇彞:"+sql);
 		try{
 			ps = conn.createStatement();
 		ResultSet rs=ps.executeQuery(sql);
@@ -32,7 +32,7 @@ public class DbMethod {
 		}
 		}catch(SQLException e){
 			e.printStackTrace();
-			System.out.println("\ngetAllCourseInfo Fail--[sqlException]:"+" "+e.getMessage()+"\n");
+			System.out.println("\nsearch Fail--[sqlException]:"+" "+e.getMessage()+"\n");
 		}
 		for(int i=0;i<objArrayL.size();i++){
 			for(int j=0;j<objArrayL.get(i).size();j++){

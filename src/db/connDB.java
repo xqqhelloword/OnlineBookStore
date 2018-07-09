@@ -13,7 +13,7 @@ public class connDB {
 	
 	private static String password = "2269";
 	
-	private static String url = "jdbc:mysql://localhost/pachong";
+	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
 	
 	private static String driver = "com.mysql.jdbc.Driver";
 	
@@ -62,7 +62,7 @@ public class connDB {
 
 	}
 
-	public static void update(String sql, Object... args) {// 使用不定长参数 也就是参数的个数是不确定的可以传递多个
+	public static void update(String sql, Object... args) {// 使锟矫诧拷锟斤拷锟斤拷锟斤拷锟斤拷 也锟斤拷锟角诧拷锟斤拷母锟斤拷锟斤拷遣锟饺凤拷锟斤拷目锟斤拷源锟斤拷荻锟斤拷
 		Connection conn = null;
 		PreparedStatement ps = null;
 
@@ -70,7 +70,7 @@ public class connDB {
 			conn = getConnection();
 			ps = conn.prepareStatement(sql);
 
-			// 对sql 中的形参进行赋值
+			// 锟斤拷sql 锟叫碉拷锟轿参斤拷锟叫革拷值
 			for (int i = 0; i < args.length; i++) {
 				ps.setObject(i + 1, args[i]);
 			}

@@ -39,12 +39,12 @@ public class LoginAction extends ActionSupport implements ModelDriven<UserBean> 
 		{
 			dataMap=new HashMap<String, Object>();
 			dataMap.put("result", "login fail");
+			System.out.println("return login result:"+dataMap.get("result"));
+			return SUCCESS;
 		}
 		dataMap=new HashMap<String, Object>();
-		System.out.print("successLogin\n");
 		dataMap.put("result", "login success");
-		System.out.println(dataMap.get("result"));
-		//��¼������������һ��service�е�loginҵ��
+		System.out.println("return login result:"+dataMap.get("result"));
 		return SUCCESS;
 	}
 
