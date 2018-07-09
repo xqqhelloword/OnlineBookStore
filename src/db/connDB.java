@@ -11,9 +11,9 @@ public class connDB {
 	
 	private static String username = "root";
 	
-	private static String password = "2269";
+	private static String password = "123456789";
 	
-	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
+	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8&useSSL=true";
 
 	private static String driver = "com.mysql.jdbc.Driver";
 	

@@ -2,11 +2,13 @@ package service;
 import java.util.ArrayList;
 import java.util.Map;
 
+import dao.Dao;
 import dao.DbMethod;
+import dao.GenericityDao;
 import bean.UserBean;
 import bean.NewUserBean;
-public class updatetest {
-	public boolean updatetest(NewUserBean user) {
+public class updateUserInfo {
+	public boolean updateUserInfo(NewUserBean user) {
 		if(this.updatetestSearch(user))
 		{
 		// TODO Auto-generated method stub
