@@ -20,12 +20,17 @@ public class registerService {
 		// TODO Auto-generated method stub
 		String userAccount=user.getUserAccount();
 		String userPassword=user.getUserPassword();
-		System.out.println("用户账号:"+user.getUserAccount()+"\n密码:"+user.getUserPassword()+"\n用户名"+user.getUserName()+"\n电话号码"+user.getUserPhone()+"\n用户地址:"+user.getUserAddress());
+		String userName=user.getUserName();
+		String userPhone=user.getUserPhone();
+		String userAddress=user.getUserAddress();
+		System.out.println("用户账号:"+userAccount+"\n密码:"+userPassword+"\n用户名"+userName+"\n电话号码"+userPhone+"\n用户地址:"+userAddress);
 		DbMethod db=new DbMethod();
-		ArrayList<Map<String,Object>> arr=db.search("select userId from user where userAccount='"+userAccount+"' and userPassword='"+userPassword+"'",1,"userId");
-		if(arr.size()>0)
+		Object[] args={userAccount,userPassword,userName,userPhone,userAddress};
+		String sql="insert into user(userAccount,userPassword,userName,userPhone,userAddress) values(?,?,?,?,?)";
+		boolean isInsert=db.insert(sql,args);
+		if(isInsert)
 			return true;
-		return true;
+		return false;
 	}
 
 }
