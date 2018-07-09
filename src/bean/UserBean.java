@@ -5,8 +5,8 @@ public class UserBean {
 	private String userPassword;
 	//private String userName;
 	public UserBean(){
-		this.userAccount="³õÊ¼»¯";
-		this.userPassword="³õÊ¼»¯";
+		this.userAccount="åˆå§‹åŒ–";
+		this.userPassword="åˆå§‹åŒ–";
 	}
 	public String getUserAccount() {
 		return userAccount;

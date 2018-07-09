@@ -51,7 +51,6 @@ public class DbMethod {
 		try {
 			conn = connDB.getConnection();
 			ps = conn.prepareStatement(sql);
-			// ��sql �е��βν��и�ֵ
 			for (int i = 0; i < args.length; i++) {
 				ps.setObject(i + 1, args[i]);
 			}
