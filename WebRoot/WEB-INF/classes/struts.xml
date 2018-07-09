@@ -16,5 +16,10 @@
                 <param name="root">dataMap</param>
             </result>
         </action>
+         <action name="bookList" method="bookListRs" class="action.bookListAction">
+            <result type="json">
+                <param name="root">dataMap</param>
+            </result>
+        </action>
     </package>
 </struts>

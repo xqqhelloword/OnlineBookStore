@@ -16,10 +16,6 @@ public class connDB {
 
 	private static String url = "jdbc:mysql://localhost/bookstore?characterEncoding=UTF-8";
 
-
-
-
-	
 	private static String driver = "com.mysql.jdbc.Driver";
 	
 	public static Connection getConnection() {
