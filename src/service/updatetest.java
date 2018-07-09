@@ -24,9 +24,10 @@ public class updatetest {
 		String userAddress=user.getUserAddress();
 		System.out.println("用户账号:"+userAccount+"\n密码:"+userPassword+"\n用户名:"+userName+"\n电话号码:"+userPhone+"\n用户地址:"+userAddress);
 		DbMethod db=new DbMethod();
-		Object[] args={userAccount,userPassword,userName,userPhone,userAddress};
-		String sql="update user set userAccount=?,userPassword=?,userName=?,userPhone=?,userAddress=? where user Account =?";
+		Object[] args={userAccount,userPassword,userName,userPhone,userAddress,userAccount};
+		String sql="update user set userAccount='"+userAccount+"',userPassword='"+userPassword+"',userName='"+userName+"',userPhone='"+userPhone+"',userAddress='"+userAddress+"' where userAccount ='"+userAccount+"'";
 		boolean isInsert=db.update(sql,args);
+		System.out.println("更新语句:"+sql);
 		if(isInsert)
 			return true;
 		return false;

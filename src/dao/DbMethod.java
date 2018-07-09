@@ -38,7 +38,6 @@ public class DbMethod {
 		}catch(SQLException e){
 			e.printStackTrace();
 			System.out.println("\nsearch Fail--[sqlException]:"+" "+e.getMessage()+"\n");
-			System.out.println("\n Fail--[sqlException]:"+" "+e.getMessage()+"\n");
 		}finally{
 			connDB.frees( ps, rs);
 		}
@@ -64,7 +63,7 @@ public class DbMethod {
 				return true;	
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
+			System.out.println("\n[insertsqlException]:"+" "+e.getMessage()+"\n");
 			return false;
 		}finally {
 			connDB.freeAll(conn, ps, null);
@@ -80,14 +79,14 @@ public class DbMethod {
 		try {
 			conn = connDB.getConnection();
 			ps = conn.prepareStatement(sql);
-			for (int i = 0; i < args.length; i++) {
-				ps.setObject(i + 1, args[i]);
-			}
+//			for (int i = 0; i < args.length; i++) {
+//				ps.setObject(i + 1, args[i]);
+//			}
 			if(ps.executeUpdate()==1)
 				return true;	
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("\n[sqlException]:"+" "+e.getMessage()+"\n");
+			System.out.println("\n[updatesqlException]:"+" "+e.getMessage()+"\n");
 			return false;
 		}finally {
 			connDB.freeAll(conn, ps, null);
