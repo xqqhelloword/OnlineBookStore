@@ -67,8 +67,10 @@ public class DbMethod {
 
 	}
 	public  boolean update(String sql, Object... args) {
-		/*Connection conn = null;
+		Connection conn = null;
 		PreparedStatement ps = null;
+		Object[] dd={"1","2"};
+		String sql2="update xxx set xx=xxx,xxx==xxx where xxx=xxx" ;
 		try {
 			conn = connDB.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -83,7 +85,7 @@ public class DbMethod {
 			return false;
 		}finally {
 			connDB.freeAll(conn, ps, null);
-		}*/
+		}
 		return false;
 
 	}
